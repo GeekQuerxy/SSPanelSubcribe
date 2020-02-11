@@ -46,6 +46,18 @@ $app->get('/', function () {
     return 'Hello World.';
 });
 
+$app->get('/404', function () {
+    return '404.';
+});
+
+$app->get('/405', function () {
+    return '405.';
+});
+
+$app->get('/500', function () {
+    return '500.';
+});
+
 $app->group('/getClient', function () {
     $this->get('/{token}', App\Controllers\UserController::class . ':getClientfromToken');
 });
