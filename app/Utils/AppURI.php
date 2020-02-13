@@ -63,7 +63,7 @@ class AppURI
                 }
                 $tls = ', over-tls=false, certificate=1';
                 if ($item['tls'] == 'tls') {
-                    $tls = ', over-tls=true, tls-host=' . $item['add'];
+                    $tls = ', over-tls=true, tls-host=' . $item['host'];
                     if ($item['verify_cert']) {
                         $tls .= ', certificate=1';
                     } else {
