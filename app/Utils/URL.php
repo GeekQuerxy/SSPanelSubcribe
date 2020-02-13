@@ -602,7 +602,6 @@ class URL
         $return_array['passwd'] = $user->passwd;
         $return_array['protocol'] = 'origin';
         $return_array['protocol_param'] = '';
-        $return_array['path'] = '';
         if ($return_array['net'] == 'obfs') {
             $return_array['obfs_param'] = $user->getMuMd5();
         } else {
