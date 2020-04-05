@@ -1,0 +1,15 @@
+.idea
+.vs/
+.vscode/
+*/.DS_Store
+.DS_Store
+.php_cs.cache
+vendor
+
+php_errors.log
+composer.phar
+
+dev.php
+produce.php
+appprofile.php
+
