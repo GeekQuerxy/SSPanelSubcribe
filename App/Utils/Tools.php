@@ -680,4 +680,32 @@ class Tools
             ? $Name
             : ($done['emoji'] . ' ' . $Name));
     }
+
+    /**
+     * 根据流量值自动转换单位输出
+     */
+    public static function flowAutoShow($value = 0)
+    {
+        $kb = 1024;
+        $mb = 1048576;
+        $gb = 1073741824;
+        $tb = $gb * 1024;
+        $pb = $tb * 1024;
+        if (abs($value) > $pb) {
+            return round($value / $pb, 2) . 'PB';
+        }
+        if (abs($value) > $tb) {
+            return round($value / $tb, 2) . 'TB';
+        }
+        if (abs($value) > $gb) {
+            return round($value / $gb, 2) . 'GB';
+        }
+        if (abs($value) > $mb) {
+            return round($value / $mb, 2) . 'MB';
+        }
+        if (abs($value) > $kb) {
+            return round($value / $kb, 2) . 'KB';
+        }
+        return round($value, 2) . 'B';
+    }
 }

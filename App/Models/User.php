@@ -62,6 +62,16 @@ class User extends Models
         return $str;
     }
 
+    /*
+     * 剩余流量
+     */
+    public function unusedTraffic()
+    {
+        $total = $this->attributes['u'] + $this->attributes['d'];
+        $transfer_enable = $this->attributes['transfer_enable'];
+        return Tools::flowAutoShow($transfer_enable - $total);
+    }
+
     /**
      * 获取全部节点对象
      *
